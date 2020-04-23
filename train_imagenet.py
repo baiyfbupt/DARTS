@@ -103,13 +103,13 @@ def build_program(main_prog, startup_prog, is_train, args):
                     step_per_epoch,
                     args.decay_rate,
                     staircase=True)
-                fluid.clip.set_gradient_clip(
-                    clip=fluid.clip.GradientClipByGlobalNorm(clip_norm=5.0))
+                clip=fluid.clip.GradientClipByGlobalNorm(clip_norm=args.grad_clip)
                 optimizer = fluid.optimizer.MomentumOptimizer(
                     learning_rate,
                     args.momentum,
                     regularization=fluid.regularizer.L2DecayRegularizer(
-                        args.weight_decay))
+                        args.weight_decay),
+                    grad_clip=clip)
                 optimizer.minimize(loss)
                 outs = [loss, top1, top5, learning_rate]
             else:

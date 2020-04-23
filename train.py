@@ -66,8 +66,8 @@ def build_program(main_prog, startup_prog, is_train, args):
                 capacity=64,
                 use_double_buffer=True,
                 iterable=True)
-            drop_path_prob = ''
-            drop_path_mask = ''
+            drop_path_prob = None
+            drop_path_mask = None
             if args.drop_path_prob > 0 and is_train:
                 drop_path_prob = fluid.data(
                     name="drop_path_prob",
