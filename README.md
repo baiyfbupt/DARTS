@@ -1,16 +1,19 @@
-[中文](README.md) | English
+[English](README_EN.md) | 中文
 
-# Differentiable Architecture Search
+# 可微分架构搜索DARTS (Differentiable Architecture Search)
 
-This work uses the [DARTS](https://arxiv.org/abs/1806.09055) method based on PaddlePaddle static graph to conduct a differential architecture search.
 
-The dynamic graph method can refer to: [PaddleSlim-DARTS](https://github.com/PaddlePaddle/PaddleSlim/tree/develop/demo/darts)
+本工作基于PaddlePaddle静态图使用[DARTS](https://arxiv.org/abs/1806.09055)方法进行可微分架构搜索。 
 
-## Dependencies
+
+
+动态图方式可以参考：[PaddleSlim-DARTS](https://github.com/PaddlePaddle/PaddleSlim/tree/develop/demo/darts)
+
+## 依赖项
 
 > PaddlePaddle >= 1.7.0, graphviz >= 0.11.1
 
-## 
+## 数据集
 
 DARTS使用`CIFAR10`数据集进行架构搜索，可选择在`CIFAR10`或`ImageNet`数据集上做架构评估。
 `CIFAR10`数据集可以在进行架构搜索或评估的过程中自动下载，`ImageNet`数据集需要自行下载，可参照此[教程](https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/image_classification#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87)
